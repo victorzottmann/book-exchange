@@ -17,13 +17,23 @@
  @import "bootstrap";
 
  .navbar {
-   background-color: #B4D2BA;
+   background-color: #189DAB;
+   height: 70px;
 
    .navbar-brand {
-     color: black;
+     color: white;
    }
 
    .nav-link {
-     color: black;
+     color: white;
    }
+   
+ }
+
+ .footer {
+   background-color: #F8F8F8;
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100vw;
  }
