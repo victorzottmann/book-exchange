@@ -15,3 +15,15 @@
  */
 
  @import "bootstrap";
+
+ .navbar {
+   background-color: #B4D2BA;
+
+   .navbar-brand {
+     color: black;
+   }
+
+   .nav-link {
+     color: black;
+   }
+ }
