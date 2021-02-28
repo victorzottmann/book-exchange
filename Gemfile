@@ -45,6 +45,14 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+# add rspec for unit testing
 gem "rspec-rails", "~> 4.0"
 
+# add devise for authentication
 gem "devise", "~> 4.7"
+
+# add bootstrap for styling views
+gem 'bootstrap', '~> 5.0.0.beta2'
+
+# add jquery as a bootstrap dependency
+gem 'jquery-rails'
