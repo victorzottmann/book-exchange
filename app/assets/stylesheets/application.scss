@@ -17,8 +17,9 @@
  @import "bootstrap";
 
  .navbar {
+   position: relative;
    background-color: #189DAB;
-   height: 70px;
+   height: 60px;
 
    .navbar-brand {
      color: white;
@@ -32,7 +33,7 @@
 
  .footer {
    background-color: #F8F8F8;
-   position: fixed;
+   position: absolute;
    left: 0;
    bottom: 0;
    width: 100vw;
