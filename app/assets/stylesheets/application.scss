@@ -23,7 +23,8 @@
  .brand-search {
    height: 90px;
    display: flex;
-   justify-content: space-evenly;
+   flex-direction: row;
+   justify-content: space-around;
    align-items: center;
 
    .navbar-brand {
@@ -32,13 +33,33 @@
    }
 
    .search-bar {
-     width: 50vw;
+     display: flex;
+     width: 47vw;
      
      .form-control {
        border-color: black;
+       border-top-right-radius: 0;
+       border-bottom-right-radius: 0;
        height: 45px;
      }
+
+     .btn {
+       border-top-left-radius: 0;
+       border-bottom-left-radius: 0;
+       width: 10vw;
+       font-size: 1.1rem;
+       border: 1px solid black;
+       background-color: #189DAB;
+       color: white;
+       float: right;
+       margin-left: 10px;
+     }
+
+     .btn:hover {
+       background-color: #148996;
+     }
    }
+
  }
 
  .navbar {
