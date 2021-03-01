@@ -16,17 +16,45 @@
 
  @import "bootstrap";
 
- .navbar {
-   position: relative;
-   background-color: #189DAB;
-   height: 60px;
+ .body {
+   box-sizing: border-box;
+ }
+
+ .brand-search {
+   height: 90px;
+   display: flex;
+   justify-content: space-evenly;
+   align-items: center;
 
    .navbar-brand {
-     color: white;
+     color: #189DAB;
+     font-size: 1.9rem;
    }
+
+   .search-bar {
+     width: 50vw;
+     
+     .form-control {
+       border-color: black;
+       height: 45px;
+     }
+   }
+ }
+
+ .navbar {
+  //  display: flex;
+  //  justify-content: center;
+  //  align-items: center;
+   background-color: #189DAB;
+   height: 50px;
 
    .nav-link {
      color: white;
+     font-size: 1.1rem;
+   }
+
+   .nav-link:hover {
+     text-decoration: underline;
    }
    
  }
