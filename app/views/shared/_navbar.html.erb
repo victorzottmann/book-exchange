@@ -1,11 +1,22 @@
 <!--navbar-dark bg-dark-->
 
-<div class="brand-search">
-  <%= link_to 'Book Exchange', root_path, class: "navbar-brand" %>
-  <form class="search-bar">
-    <input class="form-control" type="text" placeholder="Search by keyword, title, or author" aria-label="Search">
-    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form>
+<div class="container">
+  <div class="brand-search">
+    <%= link_to 'Book Exchange', root_path, class: "navbar-brand" %>
+
+    <%= form_tag book_search_path, method: "GET", class: "navbar-form" do %>
+      <div class="search-bar">
+        <%= text_field_tag :title, @title, class: "form-control" %>
+        <%= button_to "Search", nil, class: "btn btn-default" %>
+      </div>
+    <% end %>
+
+
+    <!-- <form class="search-bar">
+      <input class="form-control" type="text" placeholder="Search by keyword, title, or author" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form> -->
+  </div>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-fixed-top" aria-label="Eighth navbar example">
