@@ -48,8 +48,7 @@ class BooksController < ApplicationController
 
   def search
     @title = params[:title]
-    @books = Book.where "title like ?", "%#{@title}%"
-    # redirect_to book_path
+    @books = Book.where("title LIKE ?", "%#{@title}%")
   end
 
   private
