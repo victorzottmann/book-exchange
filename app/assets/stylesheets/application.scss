@@ -66,6 +66,11 @@
    background-color: #189DAB;
    height: 50px;
 
+   .navbar-nav {
+     display: flex;
+     justify-content: center;
+   }
+
    .nav-link {
      color: white;
      font-size: 1.1rem;

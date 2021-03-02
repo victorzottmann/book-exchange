@@ -1,2 +1,18 @@
 
-<%= render "shared/books" %>
+<h5 class="home-heading">TRENDING</h5>
+
+<div class="card-wrapper">
+  <% @books.each do |book| %>
+
+    <div class="card">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/81zpLhP1gWL.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h6 class="card-title"><%= book.title %></h6>
+        <p class="card-text"><%= book.format %></p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+      </div>
+    </div>
+
+  <% end %>
+</div>
+ 
