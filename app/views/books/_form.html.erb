@@ -1,4 +1,5 @@
 
+<!-- Form to create new book -->
 <div class="form-container">
   <%= form_with(model: book, local: true) do |form| %>
     <% if book.errors.any? %>
@@ -11,55 +12,55 @@
         </ul>
       </div>
     <% end %>
-
-    <div class="field">
-      <%= form.label :title %>
-      <%= form.text_field :title, class: "form-control" %>
+      
+    <div class="form-group">
+      <%= form.label :category_id %>
+      <%= form.collection_select(:category_id, Category.all, :id, :name) %>
     </div>
     <br>
     <div class="field">
-      <%= form.label :description %>
-      <%= form.text_area :description, class: "form-control" %>
-    </div>
-    <br>
-    <div class="field">
-      <%= form.label :edition %>
-      <%= form.number_field :edition, class: "form-control" %>
-    </div>
-    <br>
-    <div class="field">
-      <%= form.label :pages %>
-      <%= form.number_field :pages, class: "form-control" %>
-    </div>
-    <br>
-    <div class="field">
-      <%= form.label :publication_date %>
-      <%= form.text_field :publication_date, class: "form-control" %>
-    </div>
-    <br>
-    <div class="field">
-      <%= form.label :format %>
-      <%= form.text_field :format, class: "form-control" %>
-    </div>
-    <br>
-    <div class="field">
-      <%= form.label :availability %>
+      <%= form.label :available %>
       <%= form.check_box :availability %>
     </div>
     <br>
     <div class="field">
+      <%= form.label :title %>
+      <%= form.text_field :title, class: "form-control", autocomplete: "off" %>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description, class: "form-control", autocomplete: "off" %>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label :edition %>
+      <%= form.number_field :edition, class: "form-control", autocomplete: "off" %>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label :pages %>
+      <%= form.number_field :pages, class: "form-control", autocomplete: "off" %>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label :publication_date %>
+      <%= form.text_field :publication_date, class: "form-control", autocomplete: "off" %>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label :format %>
+      <%= form.text_field :format, class: "form-control", autocomplete: "off" %>
+    </div>
+    <br>
+    <div class="field">
       <%= form.label :author_id %>
-      <%= form.text_field :author_id, class: "form-control" %>
+      <%= form.text_field :author_id, class: "form-control", autocomplete: "off" %>
     </div>
     <br>
     <div class="field">
       <%= form.label :publisher_id %>
-      <%= form.text_field :publisher_id, class: "form-control" %>
-    </div>
-    <br>  
-    <div class="form-group">
-      <%= form.label :category_id %>
-      <%= form.collection_select(:category_id, Category.all, :id, :name) %>
+      <%= form.text_field :publisher_id, class: "form-control", autocomplete: "off" %>
     </div>
     <br>
     <div class="actions">

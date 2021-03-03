@@ -47,8 +47,12 @@ class BooksController < ApplicationController
   end
 
   def search
-    @title = params[:title]
-    @books = Book.where("title LIKE ?", "%#{@title}%")
+    if params[:title].blank?
+      redirect_to request.referrer
+    else
+      @title = params[:title].downcase
+      @books = Book.where("lower(title) LIKE ?", "%#{@title}%")
+    end
   end
 
   private

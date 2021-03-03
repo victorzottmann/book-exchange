@@ -1,21 +1,15 @@
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Edition</th>
-      <th>Format</th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @books.each do |book| %>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.description %></td>
-        <td><%= book.edition %></td>
-        <td><%= book.format %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="card-wrapper">
+  <% @books.each do |book| %>
+
+    <div class="card">
+      <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/81zpLhP1gWL.jpg">
+      <div class="card-body">
+        <h6 class="card-title"><%= book.title %></h6>
+        <p class="card-text"><%= book.format %></p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+      </div>
+    </div>
+
+  <% end %>
+</div>
