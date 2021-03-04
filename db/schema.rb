@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(version: 2021_03_02_122715) do
     t.integer "pages"
     t.date "publication_date"
     t.string "format"
-    t.boolean "availability"
     t.bigint "author_id", null: false
     t.bigint "publisher_id", null: false
     t.bigint "category_id", null: false
