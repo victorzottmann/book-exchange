@@ -13,4 +13,9 @@
   .field {
     width: 50vh;
   }
+
+  .form-control:focus {
+    box-shadow: none;
+  }
+
 }

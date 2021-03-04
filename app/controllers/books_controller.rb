@@ -13,8 +13,9 @@ class BooksController < ApplicationController
 
  
   def new
-    @authors = Author.all
     @book = Book.new
+    @book.build_author
+    @book.build_publisher
   end
 
   
@@ -35,7 +36,6 @@ class BooksController < ApplicationController
       end
     end
   end
-
 
   def update
     @book.update(book_params)
@@ -67,6 +67,6 @@ class BooksController < ApplicationController
     end
 
     def book_params
-      params.require(:book).permit(:title, :description, :edition, :pages, :publication_date, :format, :availability, :author_id, :publisher_id, :category_id)
+      params.require(:book).permit(:title, :description, :edition, :pages, :publication_date, :format, :author_id, :publisher_id, :category_id, author_attributes: [:name], publisher_attributes: [:name])
     end
 end
