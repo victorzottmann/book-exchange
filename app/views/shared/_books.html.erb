@@ -3,7 +3,8 @@
   <% @books.each do |book| %>
 
     <div class="card">
-      <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/81zpLhP1gWL.jpg">
+      <%= image_tag book.picture, class: "card-img-top" if book.picture.attached? %>
+      <!-- <img class="card-img-top" src="https://images-na.ssl-images-amazon.com/images/I/81zpLhP1gWL.jpg"> -->
       <div class="card-body">
         <h6 class="card-title"><%= book.title %></h6>
         <p class="card-text"><%= book.author.name %></p>
