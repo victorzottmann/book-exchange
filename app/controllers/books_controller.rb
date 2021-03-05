@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   skip_before_action :verify_authenticity_token
   before_action :set_book, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
 
   def index
@@ -45,10 +46,10 @@ class BooksController < ApplicationController
   end
 
   def search
-    if params[:title].blank?
+    if params[:q].blank?
       redirect_to request.referrer
     else
-      @title = params[:title].downcase
+      @title = params[:q].downcase
       @books = Book.where("lower(title) LIKE ?", "%#{@title}%")
     end
   end
@@ -61,10 +62,6 @@ class BooksController < ApplicationController
 
     def set_categories
       @categories = Category.all
-    end
-
-    def set_subcategories
-      @subcategories = Subcategory.all
     end
 
     def book_params
