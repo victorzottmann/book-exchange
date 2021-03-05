@@ -90,7 +90,7 @@ if Book.count == 0
     title: "Building Acoustics",
     edition: 1,
     pages: 984,
-    publication_date: "05-02-2014",
+    date: "05-02-2014",
     format: "Paperback",
     author_id: 1, # Marc Asselineau
     publisher_id: 1, # CRC Press
@@ -101,7 +101,7 @@ if Book.count == 0
     title: "The Design of Everyday Things",
     edition: 1,
     pages: 384,
-    publication_date: "05-11-2013",
+    date: "05-11-2013",
     format: "Paperback",
     author_id: 2, # Don Norman
     publisher_id: 2, # Basic Books
@@ -109,10 +109,10 @@ if Book.count == 0
   )
 
   book3 = Book.create(
-    title: "Learn to Program"
+    title: "Learn to Program",
     edition: 2,
     pages: 194,
-    publication_date: "28-03-2009",
+    date: "28-03-2009",
     format: "E-book",
     author_id: 3, # Chris Pine
     publisher_id: 3, # Pragmatic Bookshelf
@@ -120,10 +120,10 @@ if Book.count == 0
   )
 
   book4 = Book.create(
-    title: "In the Blink of an Eye: A Perspective on Film Editing"
+    title: "In the Blink of an Eye",
     edition: 2,
     pages: 146,
-    publication_date: "08-08-2001",
+    date: "08-08-2001",
     format: "Paperback",
     author_id: 4, # Walter Murch
     publisher_id: 4, # Silman-James Press
