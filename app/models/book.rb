@@ -1,8 +1,9 @@
 class Book < ApplicationRecord
   belongs_to :author
   belongs_to :publisher
-  belongs_to :category
-
+  
+  has_and_belongs_to_many :categories
+  
   has_one_attached :picture
 
   accepts_nested_attributes_for :author
