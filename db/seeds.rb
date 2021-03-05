@@ -6,113 +6,129 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+#====== CATEGORIES ======#
 categories = ["Creative Arts", "Design", "Information Technology", "Science"]
 
-categories.each do |c|
-  Category.create(name: c)
-end
-
-
-#======== CREATIVE ARTS ========#
-
-arts_subcategories = [
-  "Audio",
-  "Filmmaking",
-  "Music",
-  "Photography",
-  "Video Editing",
-  "Visual Effects"
-]
-
-arts_subcategories.each do |type|
-  Subcategory.create(name: type, category_id: 1)
+if Category.count == 0
+  categories.each do |c|
+    Category.create(name: c)
+  end
 end
 
 
 
-#======== INFORMATION TECHNOLOGY ========#
+#====== SUBCATEGORIES ======#
+# arts_subcategories = [
+#   "Audio",
+#   "Filmmaking",
+#   "Film & Video Editing",
+#   "Music",
+#   "Photography",
+#   "Visual Effects"
+# ]
 
-tech_subcategories = [
-  "Interactive Media",
-  "Mobile App Development",
-  "Web Development"
-]
+# design_subcategories = [
+#   "Architecture",
+#   "Illumination Design",
+#   "Interaction Design"
+# ]
 
-tech_subcategories.each do |type|
-  Subcategory.create(name: type, category_id: 2)
+# tech_subcategories = [
+#   "Interactive Media",
+#   "Mobile App Development",
+#   "Web Development"
+# ]
+
+# science_subcategories = [
+#   "Acoustics",
+#   "Architectural Science"
+# ]
+
+# if Subcategory.count == 0
+#   arts_subcategories.each do |type|
+#     Subcategory.create(name: type, category_id: 1)
+#   end
+
+#   design_subcategories.each do |type|
+#     Subcategory.create(name: type, category_id: 2)
+#   end
+
+#   tech_subcategories.each do |type|
+#     Subcategory.create(name: type, category_id: 3)
+#   end
+  
+#   science_subcategories.each do |type|
+#     Subcategory.create(name: type, category_id: 4)
+#   end
+# end
+
+
+
+#====== AUTHORS ======#
+if Author.count == 0
+  author1 = Author.create(name: "Marc Asselineau") #book1
+  author2 = Author.create(name: "Don Norman") #book2
+  author3 = Author.create(name: "Robert C. Martin") #book3
+  author3 = Author.create(name: "Walter Murch") #book4
+end
+
+
+#====== PUBLISHERS ======#
+if Publisher.count == 0
+  publisher1 = Publisher.create(name: "CRC Press") #book1
+  publisher2 = Publisher.create(name: "Basic Books") # book2
+  publisher3 = Publisher.create(name: "Pragmatic Bookshelf") # book3
+  publisher4 = Publisher.create(name: "Silman-James Press") # book4
 end
 
 
 
-#======== SCIENCE ========#
+#====== BOOKS ======#
+if Book.count == 0
+  book1 = Book.create(
+    title: "Building Acoustics",
+    edition: 1,
+    pages: 984,
+    publication_date: "05-02-2014",
+    format: "Paperback",
+    author_id: 1, # Marc Asselineau
+    publisher_id: 1, # CRC Press
+    category_id: 4 # Science
+  )
 
-science_subcategories = [
-  "Audio and Acoustics",
-  "Architectural Science",
-  "Illumination Design"
-]
+  book2 = Book.create(
+    title: "The Design of Everyday Things",
+    edition: 1,
+    pages: 384,
+    publication_date: "05-11-2013",
+    format: "Paperback",
+    author_id: 2, # Don Norman
+    publisher_id: 2, # Basic Books
+    category_id: 2 # Design
+  )
 
-science_subcategories.each do |type|
-  Subcategory.create(name: type, category_id: 3)
+  book3 = Book.create(
+    title: "Learn to Program"
+    edition: 2,
+    pages: 194,
+    publication_date: "28-03-2009",
+    format: "E-book",
+    author_id: 3, # Chris Pine
+    publisher_id: 3, # Pragmatic Bookshelf
+    category_id: 3 # Information Technology
+  )
+
+  book4 = Book.create(
+    title: "In the Blink of an Eye: A Perspective on Film Editing"
+    edition: 2,
+    pages: 146,
+    publication_date: "08-08-2001",
+    format: "Paperback",
+    author_id: 4, # Walter Murch
+    publisher_id: 4, # Silman-James Press
+    category_id: 1 # Creative Arts
+  )
 end
-
-
-
-author1 = Author.create(name: "Don Norman")
-author2 = Author.create(name: "Walter Murch")
-author3 = Author.create(name: "Mariana Lopez")
-author4 = Author.create(name: "Daniel Walzer")
-
-publisher1 = Publisher.create(name: "Silman-James Press")
-publisher2 = Publisher.create(name: "Routledge")
-publisher3 = Publisher.create(name: "Focal Press")
-publisher4 = Publisher.create(name: "Basic Books")
-
-book1 = Book.create(
-  title: "Architectural Acoustics",
-  description: "Architectural Acoustics offers a comprehensive overview of acoustical science at a level suitable for either advanced undergraduate or introductory graduate courses in architectural design and architectural engineering. The text is organized according to how sound interacts with built structures, going from simple geometries through complex building structures. The book begins with a brief but useful history of architecture and the role of acoustics, as well as overview of human perception of, sound, and then progresses through topics ranging from acoustic measurement, noise metrics and environmental noise, to sound in enclosed spaces, sound transmission in buildings, vibration and vibration isolation, and noise in mechanical systems.",
-  edition: 2,
-  pages: 984,
-  publication_date: "05-02-2014",
-  format: "Paperback",
-  author_id: 1,
-  publisher_id: 1,
-  category_id: 4
-)
-
-book2 = Book.create(
-  title: "The Design of Everyday Things",
-  description: "The Design of Everyday Things is a best-selling book by cognitive scientist and usability engineer Donald Norman about how design serves as the communication between object and user, and how to optimize that conduit of communication in order to make the experience of using the object pleasurable.",
-  edition: 1,
-  pages: 384,
-  publication_date: "05-11-2013",
-  format: "Paperback",
-  author_id: 1,
-  publisher_id: 1,
-  category_id: 2
-)
-
-book3 = Book.create(
-  title: "Emotional Design"
-  description: "In Emotional Design, cognitive scientist Don Norman shows how the principles of human psychology apply to the invention and design of new technologies and products. In The Design of Everyday Things, Norman made the definitive case for human-centered design, showing that good design demanded that the user's must take precedence over a designer's aesthetic if anything, from light switches to airplanes, was going to work as the user needed."
-  edition: 1,
-  pages: 272,
-  publication_date: "20-03-2007",
-  format: "Paperback",
-  author_id: 1,
-  publisher_id: 1,
-  category_id: 2
-)
-
-book4 = Book.create(
-  title: "In the Blink of an Eye: A Perspective on Film Editing"
-  description: "In the Blink of an Eye: A Perspective on Film Editing is a non-fiction filmmaking book on the art and craft of editing authored by Walter Murch. The book suggests editors prioritize emotion over the pure technicalities of editing.",
-  edition: 2,
-  pages: 146,
-  publication_date: "08-08-2001",
-  format: "Paperback",
-  author_id: 2,
-  publisher_id: 1,
-  category_id: 1
-)
+ 
 
