@@ -69,7 +69,7 @@ end
 if Author.count == 0
   author1 = Author.create(name: "Marc Asselineau") #book1
   author2 = Author.create(name: "Don Norman") #book2
-  author3 = Author.create(name: "Robert C. Martin") #book3
+  author3 = Author.create(name: "Chris Pine") #book3
   author3 = Author.create(name: "Walter Murch") #book4
 end
 

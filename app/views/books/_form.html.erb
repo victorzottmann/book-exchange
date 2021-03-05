@@ -13,6 +13,11 @@
       </div>
     <% end %>
       
+    <div class="field">
+      <%= form.label :picture %>
+      <%= form.file_field :picture, accept: "image/png, image/jpg, image/jpeg" %>
+    </div>
+    <br>
     <div class="form-group">
       <%= form.label :category_id %>
       <%= form.collection_select(:category_id, Category.all, :id, :name, prompt: true) %>
