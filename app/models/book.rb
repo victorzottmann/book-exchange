@@ -9,12 +9,12 @@ class Book < ApplicationRecord
   accepts_nested_attributes_for :author
   accepts_nested_attributes_for :publisher
 
-  before_save :remove_whitespace
+  # before_save :remove_whitespace
 
-  private
+  # private
 
-    def remove_whitespace
-      self.title = self.title.strip
-    end
+  #   def remove_whitespace
+  #     self.title = self.title.strip
+  #   end
 end
 

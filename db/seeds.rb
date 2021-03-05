@@ -96,6 +96,11 @@ if Book.count == 0
     publisher_id: 1, # CRC Press
     category_id: 4 # Science
   )
+  book1.picture.attach(
+    io: File.open("app/assets/images/building-acoustics.jpg"),
+    filename: "building-acoustics.jpg",
+    content_type: "image/jpg"
+  )
 
   book2 = Book.create(
     title: "The Design of Everyday Things",
@@ -106,6 +111,11 @@ if Book.count == 0
     author_id: 2, # Don Norman
     publisher_id: 2, # Basic Books
     category_id: 2 # Design
+  )
+  book2.picture.attach(
+    io: File.open("app/assets/images/design-everyday.jpg"),
+    filename: "design-everyday.jpg",
+    content_type: "image/jpg"
   )
 
   book3 = Book.create(
@@ -118,6 +128,11 @@ if Book.count == 0
     publisher_id: 3, # Pragmatic Bookshelf
     category_id: 3 # Information Technology
   )
+  book3.picture.attach(
+    io: File.open("app/assets/images/learn-to-program.jpg"),
+    filename: "learn-to-program.jpg",
+    content_type: "image/jpg"
+  )
 
   book4 = Book.create(
     title: "In the Blink of an Eye",
@@ -128,6 +143,11 @@ if Book.count == 0
     author_id: 4, # Walter Murch
     publisher_id: 4, # Silman-James Press
     category_id: 1 # Creative Arts
+  )
+  book4.picture.attach(
+    io: File.open("app/assets/images/blink-eye.jpg"),
+    filename: "blink-eye.jpg",
+    content_type: "image/jpg"
   )
 end
  
