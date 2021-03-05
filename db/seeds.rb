@@ -10,9 +10,9 @@
 #====== CATEGORIES ======#
 categories = ["Creative Arts", "Design", "Information Technology", "Science"]
 
-if BooksCategory.count == 0
+if Category.count == 0
   categories.each do |c|
-    BooksCategory.create(name: c)
+    Category.create(name: c)
   end
 end
 
