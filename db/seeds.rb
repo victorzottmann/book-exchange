@@ -6,8 +6,129 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-categories = ["Architectural Acoustics", "Audio Systems"]
 
-categories.each do |c|
-  Category.create(name: c)
+#====== CATEGORIES ======#
+categories = ["Creative Arts", "Design", "Information Technology", "Science"]
+
+if Category.count == 0
+  categories.each do |c|
+    Category.create(name: c)
+  end
 end
+
+
+
+#====== SUBCATEGORIES ======#
+# arts_subcategories = [
+#   "Audio",
+#   "Filmmaking",
+#   "Film & Video Editing",
+#   "Music",
+#   "Photography",
+#   "Visual Effects"
+# ]
+
+# design_subcategories = [
+#   "Architecture",
+#   "Illumination Design",
+#   "Interaction Design"
+# ]
+
+# tech_subcategories = [
+#   "Interactive Media",
+#   "Mobile App Development",
+#   "Web Development"
+# ]
+
+# science_subcategories = [
+#   "Acoustics",
+#   "Architectural Science"
+# ]
+
+# if Subcategory.count == 0
+#   arts_subcategories.each do |type|
+#     Subcategory.create(name: type, category_id: 1)
+#   end
+
+#   design_subcategories.each do |type|
+#     Subcategory.create(name: type, category_id: 2)
+#   end
+
+#   tech_subcategories.each do |type|
+#     Subcategory.create(name: type, category_id: 3)
+#   end
+  
+#   science_subcategories.each do |type|
+#     Subcategory.create(name: type, category_id: 4)
+#   end
+# end
+
+
+
+#====== AUTHORS ======#
+if Author.count == 0
+  author1 = Author.create(name: "Marc Asselineau") #book1
+  author2 = Author.create(name: "Don Norman") #book2
+  author3 = Author.create(name: "Robert C. Martin") #book3
+  author3 = Author.create(name: "Walter Murch") #book4
+end
+
+
+#====== PUBLISHERS ======#
+if Publisher.count == 0
+  publisher1 = Publisher.create(name: "CRC Press") #book1
+  publisher2 = Publisher.create(name: "Basic Books") # book2
+  publisher3 = Publisher.create(name: "Pragmatic Bookshelf") # book3
+  publisher4 = Publisher.create(name: "Silman-James Press") # book4
+end
+
+
+
+#====== BOOKS ======#
+if Book.count == 0
+  book1 = Book.create(
+    title: "Building Acoustics",
+    edition: 1,
+    pages: 984,
+    date: "05-02-2014",
+    format: "Paperback",
+    author_id: 1, # Marc Asselineau
+    publisher_id: 1, # CRC Press
+    category_id: 4 # Science
+  )
+
+  book2 = Book.create(
+    title: "The Design of Everyday Things",
+    edition: 1,
+    pages: 384,
+    date: "05-11-2013",
+    format: "Paperback",
+    author_id: 2, # Don Norman
+    publisher_id: 2, # Basic Books
+    category_id: 2 # Design
+  )
+
+  book3 = Book.create(
+    title: "Learn to Program",
+    edition: 2,
+    pages: 194,
+    date: "28-03-2009",
+    format: "E-book",
+    author_id: 3, # Chris Pine
+    publisher_id: 3, # Pragmatic Bookshelf
+    category_id: 3 # Information Technology
+  )
+
+  book4 = Book.create(
+    title: "In the Blink of an Eye",
+    edition: 2,
+    pages: 146,
+    date: "08-08-2001",
+    format: "Paperback",
+    author_id: 4, # Walter Murch
+    publisher_id: 4, # Silman-James Press
+    category_id: 1 # Creative Arts
+  )
+end
+ 
+

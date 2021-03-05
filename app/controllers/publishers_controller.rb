@@ -42,7 +42,7 @@ class PublishersController < ApplicationController
       redirect_to request.referrer
     else
       @name = params[:name].downcase
-      @books = Book.where("lower(title) LIKE ?", "%#{@name}%")
+      @publishers = Publisher.where("lower(title) LIKE ?", "%#{@name}%")
     end
   end
 

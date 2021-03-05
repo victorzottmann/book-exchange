@@ -26,15 +26,12 @@ class BooksController < ApplicationController
   def create
     @book = Book.new(book_params)
 
-    respond_to do |format|
-      if @book.save
-        format.html { redirect_to @book, notice: "Book was successfully created." }
-        format.json { render :show, status: :created, location: @book }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @book.errors, status: :unprocessable_entity }
-      end
-    end
+    if @book.save
+      flash[:success] = "Book Created"
+    else
+      flash.now[:error] = @book.errors.full_messages.to_sentence
+      render "new"
+    end    
   end
 
   def update
@@ -64,6 +61,10 @@ class BooksController < ApplicationController
 
     def set_categories
       @categories = Category.all
+    end
+
+    def set_subcategories
+      @subcategories = Subcategory.all
     end
 
     def book_params

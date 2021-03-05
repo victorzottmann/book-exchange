@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_02_122715) do
+ActiveRecord::Schema.define(version: 2021_03_05_005636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,18 +37,16 @@ ActiveRecord::Schema.define(version: 2021_03_02_122715) do
   end
 
   create_table "authors", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "books", force: :cascade do |t|
     t.string "title"
-    t.text "description"
     t.integer "edition"
     t.integer "pages"
-    t.date "publication_date"
+    t.date "date"
     t.string "format"
     t.bigint "author_id", null: false
     t.bigint "publisher_id", null: false
@@ -82,7 +80,6 @@ ActiveRecord::Schema.define(version: 2021_03_02_122715) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "books", "authors"
-  add_foreign_key "books", "categories"
   add_foreign_key "books", "publishers"
   add_foreign_key "subcategories", "categories"
 end
