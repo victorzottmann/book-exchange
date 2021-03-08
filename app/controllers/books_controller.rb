@@ -17,6 +17,8 @@ class BooksController < ApplicationController
     @book = Book.new
     @book.build_author
     @book.build_publisher
+    
+    @categories = Category.all
   end
 
   
