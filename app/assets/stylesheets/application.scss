@@ -24,7 +24,7 @@
    height: 90px;
    display: flex;
    flex-direction: row;
-   justify-content: space-around;
+   justify-content: space-between;
    align-items: center;
 
    .navbar-brand {
@@ -73,8 +73,8 @@
    background-color: #189DAB;
    height: 50px;
 
-   .navbar-collapse {
-     margin-left: 95px;
+   #first-item {
+     padding-left: 0;
    }
 
    .nav-link {
