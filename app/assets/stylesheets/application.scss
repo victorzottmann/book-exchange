@@ -73,6 +73,24 @@
    background-color: #189DAB;
    height: 50px;
 
+   #dropdown-link {
+     text-decoration: none;
+   }
+
+   .dropdown-menu {
+     display: none;
+     border-top-left-radius: 0;
+     border-top-right-radius: 0;
+     border: 1px solid #189DAB;
+    }
+    
+    .dropdown:hover {
+      .dropdown-menu {
+        display: block;
+        top: 45px;
+      }
+   }
+
    #first-item {
      padding-left: 0;
    }

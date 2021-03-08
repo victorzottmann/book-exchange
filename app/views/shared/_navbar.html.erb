@@ -7,17 +7,22 @@
 
     <div class="collapse navbar-collapse"">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item dropdown">
-          <a class="nav-link mx-auto dropdown-toggle" href="#" id="first-item" data-bs-toggle="dropdown" aria-expanded="false">Browse by Category</a>
-          <ul class="dropdown-menu" aria-labelledby="dropdown07">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
+
+        <li class="nav-item" id="first-item">
+          <%= link_to 'Home', root_path, class: "nav-link" %>
         </li>
 
-        <li class="nav-item">
-          <%= link_to 'All Books', books_path, class: "nav-link" %>
+        <li class="nav-item dropdown">
+          <a class="nav-link mx-auto dropdown-toggle" id="dropdown-link" href="#" data-bs-toggle="dropdown" aria-expanded="false">Browse by Category</a>
+          <ul class="dropdown-menu" aria-labelledby="dropdown07">
+            <li><%= link_to 'Creative Arts', creative_arts_path, class: "dropdown-item" %></li>
+            <li><%= link_to 'Design', design_path, class: "dropdown-item" %></li>
+            <li><%= link_to 'Information Technology', tech_path, class: "dropdown-item" %></li>
+            <li><%= link_to 'Science', science_path, class: "dropdown-item" %></li>
+            <%# <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li> %>
+          </ul>
         </li>
 
         <li class="nav-item">
