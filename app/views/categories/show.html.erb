@@ -1,15 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h4 class="page-heading"><%= @category.name %> books</h4>
 
 <div class="card-wrapper">
-  <% @books.each do |book| %>
-
+  <% @books_by_category.each do |book| %>
     <div class="card">
       <%= image_tag book.picture, class: "card-img-top" if book.picture.attached? %>
       <div class="card-body">
         <h6 class="card-title"><%= book.title %></h6>
         <p class="card-text"><%= book.author.name %></p>
-        <a href="#" class="btn btn-primary">Add to cart</a>
       </div>
     </div>
-
   <% end %>
 </div>
