@@ -8,13 +8,13 @@
 
 
 #====== CATEGORIES ======#
-# categories = ["Creative Arts", "Design", "Information Technology", "Science"]
+categories = ["Creative Arts", "Design", "Information Technology", "Science"]
 
-# if Category.count == 0
-#   categories.each do |c|
-#     Category.create(name: c)
-#   end
-# end
+if Category.count == 0
+  categories.each do |c|
+    Category.create(name: c)
+  end
+end
 
 
 
@@ -94,7 +94,7 @@ if Book.count == 0
     format: "Paperback",
     author_id: 1, # Marc Asselineau
     publisher_id: 1, # CRC Press
-    # category_id: 4 # Science
+    category_id: 4 # Science
   )
   book1.picture.attach(
     io: File.open("app/assets/images/building-acoustics.jpg"),
@@ -110,7 +110,7 @@ if Book.count == 0
     format: "Paperback",
     author_id: 2, # Don Norman
     publisher_id: 2, # Basic Books
-    # category_id: 2 # Design
+    category_id: 2 # Design
   )
   book2.picture.attach(
     io: File.open("app/assets/images/design-everyday.jpg"),
@@ -126,7 +126,7 @@ if Book.count == 0
     format: "E-book",
     author_id: 3, # Chris Pine
     publisher_id: 3, # Pragmatic Bookshelf
-    # category_id: 3 # Information Technology
+    category_id: 3 # Information Technology
   )
   book3.picture.attach(
     io: File.open("app/assets/images/learn-to-program.jpg"),
@@ -142,7 +142,7 @@ if Book.count == 0
     format: "Paperback",
     author_id: 4, # Walter Murch
     publisher_id: 4, # Silman-James Press
-    # category_id: 1 # Creative Arts
+    category_id: 1 # Creative Arts
   )
   book4.picture.attach(
     io: File.open("app/assets/images/blink-eye.jpg"),
