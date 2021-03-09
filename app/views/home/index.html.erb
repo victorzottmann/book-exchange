@@ -1,7 +1,22 @@
 
 <h4 class="page-heading">Recommended For You</h4>
 
+<div class="cards-container">
+  <% @books.each do |book|%>
 
-<%= render "shared/books" %>
+    <div class="card" style="width: 18rem;">
+      <%= link_to image_tag book.picture, class: "card-img-top" if book.picture.attached? %>
+      <div class="card-body">
+        <h6><%= link_to "#{book.title}", book_path(book.id), class: "card-title" %></h6>
+        <p class="card-text"><%= book.author.name %></p>
+      </div>
+      <a href="#" class="btn btn-primary">Add to Basket</a>
+    </div>
+
+  <% end %>
+</div>
+
+
+<%#= render "shared/books" %>
 
  

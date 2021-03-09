@@ -5,11 +5,12 @@
     <div class="card">
       <%= image_tag book.picture, class: "card-img-top" if book.picture.attached? %>
       <div class="card-body">
-        <h6 class="card-title"><%= book.title %></h6>
+        <h6><%= link_to "#{book.title}", book_path(book.id), class: "card-title" %>
         <p class="card-text"><%= book.author.name %></p>
-        <a href="#" class="btn btn-primary">Add to cart</a>
+        <a href="#" class="btn btn-primary">Add to Basket</a>
       </div>
     </div>
 
   <% end %>
 </div>
+
