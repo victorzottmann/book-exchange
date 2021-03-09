@@ -1,44 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @book.title %>
-</p>
+<div class="show-content">
+  <div>
+    <%= image_tag @book.picture, class: "show-img-top" if @book.picture.attached? %>
+  </div>
 
-<p>
-  <strong>Edition:</strong>
-  <%= @book.edition %>
-</p>
+  <div class="book-info">
+    <h4><%= @book.title.upcase %></h4>
+    <p>By <%= @book.author.name %></p>
+    <p>Format: <%= @book.format %></p>
+    <br>
+    <div class="book-description col-md-7 order-md-2">
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias inventore adipisci eligendi excepturi quod. Fugiat nihil culpa, quis minima magni recusandae esse aliquid optio, expedita aspernatur deserunt earum perferendis repellendus!
+      </p>
+    </div>
+  </div>
 
-<p>
-  <strong>Pages:</strong>
-  <%= @book.pages %>
-</p>
-
-<p>
-  <strong>Publication date:</strong>
-  <%= @book.publication_date %>
-</p>
-
-<p>
-  <strong>Format:</strong>
-  <%= @book.format %>
-</p>
-
-<p>
-  <strong>Author:</strong>
-  <%= @book.author_id %>
-</p>
-
-<p>
-  <strong>Publisher:</strong>
-  <%= @book.publisher_id %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @book.category_id %>
-</p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
+  <div class="basket">
+    <%= link_to "Add to Basket", books_path, class: "btn btn-primary" %>
+  </div>
+</div>

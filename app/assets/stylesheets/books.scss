@@ -3,3 +3,39 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
+.show-content {
+  display: flex;
+  justify-content: space-evenly;
+
+  position: relative;
+  top: 50px;
+  
+  .show-img-top {
+    border: 1px solid black;
+    width: 200px;
+    height: 300px;
+  }
+
+  .book-description {
+    width: 70vh;
+  }
+
+  .basket {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid black;
+    width: 400px;
+
+    .btn {
+      font-size: 1.1rem;
+      border-color: black;
+      background-color: #189DAB;
+      align-items: center;
+      margin-bottom: 20px;
+      width: 50%;
+      height: 40px;
+    }
+  }
+}

@@ -47,7 +47,7 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
-  def search
+  def search 
     if params[:q].blank?
       redirect_to request.referrer
     else
