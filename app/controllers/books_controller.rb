@@ -10,6 +10,7 @@ class BooksController < ApplicationController
 
  
   def show
+    @book = Book.find(params[:id])
   end
 
  
@@ -30,7 +31,7 @@ class BooksController < ApplicationController
     @book = Book.new(book_params)
 
     if @book.save
-      flash[:success] = "Book Created"
+      flash[:success] = "A new book was successfully created."
     else
       flash.now[:error] = @book.errors.full_messages.to_sentence
       render "new"
@@ -47,12 +48,13 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
 
-  def search
+  def search 
     if params[:q].blank?
       redirect_to request.referrer
     else
       @title = params[:q].downcase
       @books = Book.where("lower(title) LIKE ?", "%#{@title}%")
+      # @books = Book.all.where("lower(title) LIKE :q", q: "%#{@title}%")
     end
   end
 
