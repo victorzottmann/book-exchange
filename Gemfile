@@ -57,3 +57,6 @@ gem 'bootstrap', '~> 5.0.0.beta2'
 # add jquery as a bootstrap dependency
 gem 'jquery-rails'
 gem "aws-sdk-s3", "~> 1.89"
+
+# add leaflet.js for implementing interactive maps
+gem "leaflet-rails", "~> 1.7"
