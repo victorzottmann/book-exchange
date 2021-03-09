@@ -11,6 +11,7 @@
     <p>Format: <%= @book.format %></p>
     <br>
     <div class="book-description col-md-7 order-md-2">
+      <h5>Summary</h5>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias inventore adipisci eligendi excepturi quod. Fugiat nihil culpa, quis minima magni recusandae esse aliquid optio, expedita aspernatur deserunt earum perferendis repellendus!
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias inventore adipisci eligendi excepturi quod. Fugiat nihil culpa, quis minima magni recusandae esse aliquid optio, expedita aspernatur deserunt earum perferendis repellendus!
@@ -21,28 +22,12 @@
 
   
   <div class="basket">
+    <%= link_to "Add to Basket", books_path, class: "basket-text btn btn-primary" %>
+
+    <h5 class="map-heading">Locations Available for Exchange:</h5>
     <div id="map">
-      <script>
-        var mymap = L.map('map').setView([51.505, -0.09], 13);
-
-        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-          maxZoom: 18,
-          id: 'mapbox/streets-v11',
-          tileSize: 256,
-          zoomOffset: -1,
-          accessToken: 'pk.eyJ1IjoidnpvdHRtYW5uIiwiYSI6ImNrbTF1NWU4ZTBicTcydnBpNjR3dm56M3cifQ.cfuf97amD4jAdozymtPTWg'
-        }).addTo(mymap);
-
-        mapboxgl.accessToken = 'pk.eyJ1IjoidnpvdHRtYW5uIiwiYSI6ImNrbTF1NWU4ZTBicTcydnBpNjR3dm56M3cifQ.cfuf97amD4jAdozymtPTWg';
-        
-        var map = new mapboxgl.Map({
-        container: 'map',
-        style: 'mapbox://styles/mapbox/streets-v11'
-        });
-      </script>
+      <%= javascript_pack_tag "leaflet/index" %>
     </div>
 
-    <%= link_to "Add to Basket", books_path, class: "btn btn-primary" %>
   </div>
 </div>
