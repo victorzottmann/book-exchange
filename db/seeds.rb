@@ -83,6 +83,21 @@ if Publisher.count == 0
 end
 
 
+#====== USERS ======#
+if User.count == 0
+  user1 = User.create(
+    name: "Mark Johnson",
+    email: "markj@email.com",
+    password: "123456"
+  )
+
+  user2 = User.create(
+    name: "John Markson",
+    email: "johnm@email.com",
+    password: "123456"
+  )
+end
+
 
 #====== BOOKS ======#
 if Book.count == 0
@@ -94,7 +109,8 @@ if Book.count == 0
     format: "Paperback",
     author_id: 1, # Marc Asselineau
     publisher_id: 1, # CRC Press
-    category_id: 4 # Science
+    category_id: 4, # Science
+    user_id: 1 # Mark Johnson
   )
   book1.picture.attach(
     io: File.open("app/assets/images/building-acoustics.jpg"),
@@ -110,7 +126,8 @@ if Book.count == 0
     format: "Paperback",
     author_id: 2, # Don Norman
     publisher_id: 2, # Basic Books
-    category_id: 2 # Design
+    category_id: 2, # Design
+    user_id: 1 # Mark Johnson
   )
   book2.picture.attach(
     io: File.open("app/assets/images/design-everyday.jpg"),
@@ -126,7 +143,8 @@ if Book.count == 0
     format: "E-book",
     author_id: 3, # Chris Pine
     publisher_id: 3, # Pragmatic Bookshelf
-    category_id: 3 # Information Technology
+    category_id: 3, # Information Technology
+    user_id: 2 # John Markson
   )
   book3.picture.attach(
     io: File.open("app/assets/images/learn-to-program.jpg"),
@@ -142,7 +160,8 @@ if Book.count == 0
     format: "Paperback",
     author_id: 4, # Walter Murch
     publisher_id: 4, # Silman-James Press
-    category_id: 1 # Creative Arts
+    category_id: 1, # Creative Arts
+    user_id: 2 # John Markson
   )
   book4.picture.attach(
     io: File.open("app/assets/images/blink-eye.jpg"),

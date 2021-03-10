@@ -3,40 +3,55 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 
-.card-wrapper {
+
+.cards-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
-  align-items: center;
+  gap: 12px;
   
   .card {
-    display: flex;
     align-items: center;
-    width: 10rem;
-    height: 22rem;
+    // border: 1px solid black;
     border: none;
 
     .card-img-top {
-      margin-top: 20px;
-      width: 100px;
+      width: 120px;
+      border: 1px solid black;
+    }
+
+    .card-img-top:hover {
+      cursor: pointer;
     }
 
     .card-body {
-      position: absolute;
-      bottom: 0;
-      padding: auto 0;
 
       .card-title {
-        text-align: center;
+        text-decoration: none;
+        color: black;
+      }
+
+      .card-title:hover {
+        color: #1B73F9;
       }
 
       .card-text {
         text-align: center;
       }
+    }
 
-      .btn-primary {
-        margin-left: 11px;
-      }
+    .btn {
+      margin-bottom: 10px;
+      width: 60%;
+      height: 40px;
+      background-color: #ffddd2;
+      color: black;
+      border-color: black;
+      font-size: 1.1rem;
+    }
+
+    .btn:hover {
+      background-color: #f5cbbd;
     }
   }
 }

@@ -9,7 +9,13 @@
     <h4><%= @book.title.upcase %></h4>
     <p>By <%= @book.author.name %></p>
     <p>Format: <%= @book.format %></p>
-    <br>
+    
+    <% if user_signed_in? %>
+      <span><%= link_to "Edit", edit_book_path %> |</span>
+      <span><%= link_to "Delete", @book, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+    <% end %>
+
+    <br><br>
     <div class="book-description col-md-7 order-md-2">
       <h5>Summary</h5>
       <p>
@@ -22,7 +28,7 @@
 
   
   <div class="basket">
-    <%= link_to "Add to Basket", books_path, class: "basket-text btn btn-primary" %>
+    <%= link_to "Add to Basket", "#", class: "basket-text btn btn-primary" %>
 
     <h5 class="map-heading">Locations Available for Exchange:</h5>
     <div id="map">

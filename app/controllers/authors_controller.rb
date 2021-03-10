@@ -38,10 +38,10 @@ class AuthorsController < ApplicationController
   end
 
   def search
-    if params[:name].blank?
+    if params[:q].blank?
       redirect_to request.referrer
     else
-      @name = params[:name].downcase
+      @name = params[:q].downcase
       @authors = Author.where("lower(title) LIKE ?", "%#{@name}%")
     end
   end
