@@ -87,13 +87,13 @@ end
 if User.count == 0
   user1 = User.create(
     name: "Mark Johnson",
-    email: "markj@email.com"
+    email: "markj@email.com",
     password: "123456"
   )
 
   user2 = User.create(
-    name: "John Markson"
-    email: "johnm@email.com"
+    name: "John Markson",
+    email: "johnm@email.com",
     password: "123456"
   )
 end
