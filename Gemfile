@@ -60,4 +60,5 @@ gem 'jquery-rails'
 # add AWS S3 bucket
 gem "aws-sdk-s3", "~> 1.89"
 
+# add figaro to inclue application.yml to git ignore
 gem "figaro", "~> 1.2"
