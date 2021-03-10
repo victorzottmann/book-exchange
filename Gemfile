@@ -57,3 +57,5 @@ gem 'bootstrap', '~> 5.0.0.beta2'
 # add jquery as a bootstrap dependency
 gem 'jquery-rails'
 gem "aws-sdk-s3", "~> 1.89"
+
+gem "figaro", "~> 1.2"
