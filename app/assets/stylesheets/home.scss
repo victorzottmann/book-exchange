@@ -8,9 +8,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  gap: 12px;
   
   .card {
     align-items: center;
+    // border: 1px solid black;
     border: none;
 
     .card-img-top {

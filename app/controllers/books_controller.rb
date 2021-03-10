@@ -33,6 +33,7 @@ class BooksController < ApplicationController
 
     if @book.save
       flash[:success] = "A new book was successfully created."
+      redirect_to book_path(@book.id)
     else
       flash.now[:error] = @book.errors.full_messages.to_sentence
       render "new"
