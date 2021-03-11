@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <h1 class="hero-title text-center m-5">Edit John Doe's Profile</h5>
+</div>
+<div class="container">
+  <% if @user.profile_picture.attached? %>
+    <span class="m-3"> 
+      <%= image_tag(@user.profile_picture, {class: "profile_picture"}) %>
+    </span>
+  <% else %>
+    <span>
+      <%= image_tag("https://images.unsplash.com/photo-1526297003708-f5a1c2c9c6e7?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MTZ8fGZhY2UlMjBjYXJ0b29ufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60", class: "profile_picture") %>
+    </span>
+  <% end %>
+  <%= render "form" %>
+</div>

@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :publishers
 
   devise_for :users
+  get "/profile", to: "users#profile", as: "user_profile"
+  get "/profile/edit", to: "users#edit", as: "edit_user"
+  put  "/profile/", to: "users#update"
+  patch "/profile", to: "users#update"
   
   get "categories/1", to: "categories#show", as: "creative_arts"
   get "categories/2", to: "categories#show", as: "design"

@@ -1,0 +1,18 @@
+
+<div class="form-container">
+  <%= form_with(model: @user, url: edit_user_path,local: true) do |form| %>
+    <div class="field">
+      <%= form.label :bio %>
+      <%= form.text_field :bio %>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label :profile_picture %> <br>
+      <%= form.file_field :profile_picture, accept: "image/png, image/jpeg, image/jpg" %>
+    </div>
+    <br>
+    <div class="action">
+      <%= form.submit %>
+    </div>
+  <% end %>
+</div>
