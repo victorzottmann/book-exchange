@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :publishers
 
   devise_for :users
+  get "/profile", to: "users#profile", as: "user_profile"
   
   get "categories/1", to: "categories#show", as: "creative_arts"
   get "categories/2", to: "categories#show", as: "design"
