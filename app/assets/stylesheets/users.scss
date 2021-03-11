@@ -13,15 +13,19 @@
     border-radius: 15px;
     align-items: center;
 
-    .profile-picture {
+    .user-img-container {
+      display: flex;
       justify-content: center;
       align-items: center;
-      width: 150px; 
-      height: 150px;
-      border-radius: 50%;
+      .profile-picture {
+        width: 150px; 
+        height: 150px;
+        border-radius: 50%;
+      }
     }
   
     .card-body {
+      
       .card-title {
         text-align: center;
       }

@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  before_action :set_profile, only: %i[profile edit update ]
+  before_action :authenticate_user!
 
   def profile
     @user = current_user
@@ -7,14 +8,14 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(profile_params)
+      flash[:success] = "Profile updated."
       redirect_to @user
     else
       render "edit"
     end 
   end
 
-  def edit
-    
+  def edit  
   end
 
   private
@@ -24,6 +25,6 @@ class UsersController < ApplicationController
     end
 
     def profile_params
-      params.require(:user).permit(:bio, :profile_picture)
+      params.require(:user).permit(:profile_picture, :bio)
     end
 end
