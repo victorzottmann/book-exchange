@@ -2,12 +2,24 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@mixin flex-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
 
 .show-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-
   position: relative;
   top: 50px;
   
@@ -22,28 +34,24 @@
   }
 
   .basket {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    @include flex-center-column();
     width: 350px;
     // border: 1px solid black;
     
-    .basket-text {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+    .basket-links {
+      @include flex-between-column();
+      width: 100%;
+      
+      .btn {
+        background-color: #189DAB;
+        border-color: black;
+        width: 70%;
+        font-size: 1.1rem;
+      }
 
-    .btn {
-      background-color: #189DAB;
-      border-color: black;
-      align-self: center;
-      position: relative;
-      bottom: 65px;
-      width: 70%;
-      height: 10%;
-      font-size: 1.1rem;
+      h4 {
+        margin-bottom: 0;
+      }
     }
 
     .map-heading {
