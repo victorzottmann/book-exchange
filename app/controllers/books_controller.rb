@@ -24,6 +24,7 @@ class BooksController < ApplicationController
 
   
   def edit
+    @categories = Category.all
   end
 
  
@@ -41,8 +42,12 @@ class BooksController < ApplicationController
   end
 
   def update
-    @book.update(book_params)
-    redirect_to @book
+    if @book.update(book_params)
+      flash[:success] = "Book updated."
+      redirect_to book_path(@book.id)
+    else
+      render "edit"
+    end
   end
  
   def destroy
@@ -56,7 +61,6 @@ class BooksController < ApplicationController
     else
       @title = params[:q].downcase
       @books = Book.where("lower(title) LIKE ?", "%#{@title}%")
-      # @books = Book.all.where("lower(title) LIKE :q", q: "%#{@title}%")
     end
   end
 

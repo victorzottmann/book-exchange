@@ -54,10 +54,15 @@
 
       .swap-action {
         display: flex;
-        justify-content: space-between;        
+        justify-content: space-between; 
+        
+        p {
+          margin-bottom: 0;
+        }
 
         .swap-icon {
           width: 1.7em;
+          fill: black;
         }
       }
 
@@ -65,7 +70,12 @@
         display: flex;
         justify-content: space-between;
         
+        p {
+          margin-bottom: 0;
+        }
+        
         .basket-icon {
+          margin-top: 0;
           width: 1.6em;
           fill: orange;
         }
