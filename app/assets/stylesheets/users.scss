@@ -53,8 +53,12 @@
   }
 }
 
-.my-books {
-  margin-top: 10px;
+.user-books-container {
+  @include flex-center();
+
+  .col-md-8 {
+    @include flex-center();
+  }
 }
 
 .edit-profile-container {
