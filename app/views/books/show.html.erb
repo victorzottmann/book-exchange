@@ -44,3 +44,23 @@
     </div>
   </div>
 </div>
+
+<button data-stripe="payment">
+  Buy Now!
+</button>
+
+<script src="https://js.stripe.com/v3/"></script>
+
+<script>
+  document
+    .querySelector("[data-stripe='payment']")
+    .addEventListener("click", () => {
+      const stripe = Stripe(
+        "<%= Rails.application.credentials.dig(:stripe, :publishable_key) %>"
+      )
+
+      stripe.redirectToCheckout({
+        sessionId: "<%= @session.id %>"
+      })
+    })
+</script>

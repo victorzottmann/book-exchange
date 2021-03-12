@@ -18,7 +18,6 @@ class BooksController < ApplicationController
         customer_email: current_user.email,
         line_items: [{
           name: @book.title,
-          description: @book.description,
           amount: @book.price,
           currency: 'aud',
           quantity: 1
