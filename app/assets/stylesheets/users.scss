@@ -2,22 +2,34 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 .user-container {
   display: flex;
   justify-content: center;
+  max-width: 100vw;
 
   .user-card {
     width: 50rem;
-    border: 1px solid black;
+    // border: 1px solid black;
     border-radius: 15px;
     align-items: center;
 
     .user-img-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      .profile-picture {
+      @include flex-center();
+
+      .user-img {
         width: 150px; 
         height: 150px;
         border-radius: 50%;
@@ -25,10 +37,44 @@
     }
   
     .card-body {
+
+      .options-container {
+        @include flex-center();
+      }
+
+      .btn:hover {
+        color: #1B73F9;
+      }
       
       .card-title {
         text-align: center;
       }
+    }
+  }
+}
+
+.user-books-container {
+  @include flex-center();
+
+  .col-md-8 {
+    @include flex-center();
+  }
+}
+
+.edit-profile-container {
+  @include flex-center-column();
+  
+  .upload-picture {
+    @include flex-center();
+    border: 1px solid black;
+  }
+
+  .form-group {
+
+    .edit-picture {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
     }
   }
 }

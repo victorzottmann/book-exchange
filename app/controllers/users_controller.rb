@@ -4,12 +4,13 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
+    @books = Book.all
   end
 
   def update
     if @user.update(profile_params)
       flash[:success] = "Profile updated."
-      redirect_to @user
+      redirect_to user_profile_path
     else
       render "edit"
     end 

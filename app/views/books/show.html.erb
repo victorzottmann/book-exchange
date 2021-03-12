@@ -27,13 +27,20 @@
   </div>
 
   
-  <div class="basket">
-    <%= link_to "Add to Basket", "#", class: "basket-text btn btn-primary" %>
+  <div class="basket">  
+    <div class="basket-links">
+      <%= link_to "Add to Basket", "#", class: "basket-text btn btn-primary", id: "basket-button" %>
+      <br>
+      <h4>OR</h4>
+      <br>
+      <%= link_to "Exchange with Someone", "#", class: "basket-text btn btn-primary", id: "exchange-button" %>
+      <br>
+      <br>
+    </div>
 
     <h5 class="map-heading">Locations Available for Exchange:</h5>
     <div id="map">
       <%= javascript_pack_tag "leaflet/index" %>
     </div>
-
   </div>
 </div>

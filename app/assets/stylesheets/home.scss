@@ -2,7 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .cards-container {
   display: flex;
@@ -12,8 +16,6 @@
   
   .card {
     align-items: center;
-    // border: 1px solid black;
-    border: none;
 
     .card-img-top {
       width: 120px;
@@ -25,8 +27,12 @@
     }
 
     .card-body {
+      width: 200px;
+      padding: 16px 0;
 
       .card-title {
+        @include flex-center();
+        text-align: center;
         text-decoration: none;
         color: black;
       }
@@ -39,6 +45,44 @@
         text-align: center;
       }
     }
+
+    .action-icons {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      // border: 1px solid black;
+
+      .swap-action {
+        display: flex;
+        justify-content: space-between; 
+        
+        p {
+          margin-bottom: 0;
+        }
+
+        .swap-icon {
+          width: 1.7em;
+          fill: black;
+        }
+      }
+
+      .basket-action {
+        display: flex;
+        justify-content: space-between;
+        
+        p {
+          margin-bottom: 0;
+        }
+        
+        .basket-icon {
+          margin-top: 0;
+          width: 1.6em;
+          fill: orange;
+        }
+      }
+
+    }
+
 
     .btn {
       margin-bottom: 10px;
