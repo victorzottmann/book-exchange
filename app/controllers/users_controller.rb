@@ -4,6 +4,7 @@ class UsersController < ApplicationController
 
   def profile
     @user = current_user
+    @books = Book.all
   end
 
   def update
