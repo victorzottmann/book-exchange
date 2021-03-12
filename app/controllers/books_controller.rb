@@ -19,12 +19,12 @@ class BooksController < ApplicationController
     @book.build_author
     @book.build_publisher
     
-    @categories = Category.all
+    load_categories
   end
 
   
   def edit
-    @categories = Category.all
+    load_categories
   end
 
  
@@ -70,7 +70,7 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
     end
 
-    def set_categories
+    def load_categories
       @categories = Category.all
     end
 

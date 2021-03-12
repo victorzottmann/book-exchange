@@ -16,10 +16,11 @@
   
   .card {
     align-items: center;
+    padding-top: 20px;
 
     .card-img-top {
-      width: 120px;
       border: 1px solid black;
+      width: 120px;
     }
 
     .card-img-top:hover {
