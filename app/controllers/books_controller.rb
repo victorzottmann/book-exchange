@@ -10,8 +10,7 @@ class BooksController < ApplicationController
 
  
   def show
-    @book = Book.find(params[:id])
-    @book.user = current_user
+    # @book = Book.find(params[:id])
 
     if user_signed_in?
       session = Stripe::Checkout::Session.create(
@@ -29,7 +28,6 @@ class BooksController < ApplicationController
             book_id: @book.id
           }
         },
-        mode: 'payment',
         success_url: "#{root_url}payments/success?bookId=#{@book.id}",
         cancel_url: "#{root_url}books"
       )

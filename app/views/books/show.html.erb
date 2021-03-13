@@ -38,6 +38,12 @@
 
       <%= link_to "Exchange with Someone", "#", class: "basket-text btn btn-primary", id: "exchange-button" %>
       <br><br>
+      <% if user_signed_in? %>
+        <button data-stripe="payment">Purchase</button>
+      <% else %>
+        <%= button_to "Buy Now!", new_user_registration_path, method: :get %>
+      <% end %>
+      <br><br>
     </div>
 
     <h5 class="map-heading">Locations Available for Exchange:</h5>
@@ -45,23 +51,15 @@
       <%= javascript_pack_tag "leaflet/index" %>
     </div>
   </div>
+  
 </div>
 
-<button class="btn btn-primary" data-stripe="payment">
-  Purchase 
-  <%= number_to_currency(@book.price) %>
-</button>
-
-<%#= link_to "Purchase #{number_to_currency(@book.price)}", "#", class: "btn btn-primary", %>
 
 <script src="https://js.stripe.com/v3/"></script>
-
 <script>
-  document
-    .querySelector("[data-stripe='payment']")
-    .addEventListener("click", () => {
-      const stripe = Stripe(
-        "<%= Rails.application.credentials.dig(:stripe, :publishable_key) %>"
+  document.querySelector("[data-stripe='payment']").addEventListener("click", () => {
+      var stripe = Stripe(
+        "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
       );
 
       stripe.redirectToCheckout({

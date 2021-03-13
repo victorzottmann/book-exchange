@@ -14,13 +14,11 @@
             <%= link_to image_tag("icons/swap.svg", class: "swap-icon"), books_path %>
           </div>
           <br>
-          <% if book.user.id != current_user.id %>
+          <% if !book.user.id %>
             <div class="basket-action">
               <p>Add to Basket</p>
               <%= link_to image_tag("icons/basket.svg", class: "basket-icon"), books_path %>
             </div>
-          <% else %>
-            <p>My Book</p>
           <% end %>
         </div>
       </div>
