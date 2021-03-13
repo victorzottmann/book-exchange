@@ -8,6 +8,11 @@
     </div>
     <br>
     <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control", autocomplete: "off" %>
+    </div>
+    <br>
+    <div class="field">
       <%= form.label :bio %>
       <%= form.text_area :bio, class: "form-control", autocomplete: "off" %>
     </div>

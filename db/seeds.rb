@@ -107,6 +107,7 @@ if Book.count == 0
     pages: 984,
     date: "05-02-2014",
     format: "Paperback",
+    price: 5.00,
     author_id: 1, # Marc Asselineau
     publisher_id: 1, # CRC Press
     category_id: 4, # Science
@@ -124,6 +125,7 @@ if Book.count == 0
     pages: 384,
     date: "05-11-2013",
     format: "Paperback",
+    price: 5.00,
     author_id: 2, # Don Norman
     publisher_id: 2, # Basic Books
     category_id: 2, # Design
@@ -141,6 +143,7 @@ if Book.count == 0
     pages: 194,
     date: "28-03-2009",
     format: "E-book",
+    price: 5.00,
     author_id: 3, # Chris Pine
     publisher_id: 3, # Pragmatic Bookshelf
     category_id: 3, # Information Technology
@@ -158,6 +161,7 @@ if Book.count == 0
     pages: 146,
     date: "08-08-2001",
     format: "Paperback",
+    price: 5.00,
     author_id: 4, # Walter Murch
     publisher_id: 4, # Silman-James Press
     category_id: 1, # Creative Arts

@@ -36,6 +36,7 @@
   .basket {
     @include flex-center-column();
     width: 350px;
+    // padding: 15px;
     // border: 1px solid black;
     
     .basket-links {

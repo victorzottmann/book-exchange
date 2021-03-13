@@ -62,3 +62,8 @@ gem "aws-sdk-s3", "~> 1.89"
 
 # add figaro to inclue application.yml to git ignore
 gem "figaro", "~> 1.2"
+
+# add stripe for payments
+gem "stripe", "~> 5.30"
+
+gem "ultrahook", "~> 1.0"

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :publishers
 
   devise_for :users
+  
   get "/profile", to: "users#profile", as: "user_profile"
   get "/profile/edit", to: "users#edit", as: "edit_user"
   patch "/profile/edit", to: "users#update"
@@ -17,5 +18,8 @@ Rails.application.routes.draw do
   get "categories/3", to: "categories#show", as: "tech"
   get "categories/4", to: "categories#show", as: "science"
   
+  get "/payments/success", to: "payments#success"
+  post "/payments/webhook", to: "payments#webhook"
+
   root to: "home#index"
 end
