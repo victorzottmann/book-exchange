@@ -18,16 +18,17 @@ class BooksController < ApplicationController
         customer_email: current_user.email,
         line_items: [{
           name: @book.title,
-          amount: @book.price,
+          amount: (@book.price * 100),
           currency: 'aud',
           quantity: 1
         }],
         payment_intent_data: {
           metadata: {
             user_id: current_user.id,
-            listing_id: @book.id
+            book_id: @book.id
           }
         },
+        mode: 'payment',
         success_url: "#{root_url}payments/success?bookId=#{@book.id}",
         cancel_url: "#{root_url}books"
       )
@@ -97,6 +98,6 @@ class BooksController < ApplicationController
     end
 
     def book_params
-      params.require(:book).permit(:picture, :title, :edition, :pages, :date, :format, :author_id, :publisher_id, :category_id, author_attributes: [:name], publisher_attributes: [:name])
+      params.require(:book).permit(:picture, :title, :edition, :pages, :date, :format, :price, :author_id, :publisher_id, :category_id, author_attributes: [:name], publisher_attributes: [:name])
     end
 end

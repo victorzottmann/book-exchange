@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 2021_03_12_122432) do
     t.text "description"
     t.bigint "category_id", null: false
     t.bigint "user_id"
-    t.decimal "price"
+    t.integer "price"
     t.index ["author_id"], name: "index_books_on_author_id"
     t.index ["category_id"], name: "index_books_on_category_id"
     t.index ["publisher_id"], name: "index_books_on_publisher_id"

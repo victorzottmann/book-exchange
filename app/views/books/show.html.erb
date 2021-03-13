@@ -45,9 +45,12 @@
   </div>
 </div>
 
-<button data-stripe="payment">
-  Buy Now!
+<button class="btn btn-primary" data-stripe="payment">
+  Purchase 
+  <%= number_to_currency(@book.price) %>
 </button>
+
+<%#= link_to "Purchase #{number_to_currency(@book.price)}", "#", class: "btn btn-primary", %>
 
 <script src="https://js.stripe.com/v3/"></script>
 
@@ -57,10 +60,11 @@
     .addEventListener("click", () => {
       const stripe = Stripe(
         "<%= Rails.application.credentials.dig(:stripe, :publishable_key) %>"
-      )
+      );
 
       stripe.redirectToCheckout({
-        sessionId: "<%= @session.id %>"
-      })
-    })
+        sessionId: "<%= @session_id %>"
+      });
+    });
 </script>
+
