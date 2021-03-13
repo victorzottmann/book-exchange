@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :authors
   resources :books
   resources :categories
-  resources :exchanges
   resources :publishers
 
   devise_for :users
@@ -20,6 +19,7 @@ Rails.application.routes.draw do
   get "categories/4", to: "categories#show", as: "science"
   
   get "/payments/success", to: "payments#success"
+  post "/payments/webhook", to: "payments#webhook"
 
   root to: "home#index"
 end

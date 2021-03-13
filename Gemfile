@@ -65,3 +65,5 @@ gem "figaro", "~> 1.2"
 
 # add stripe for payments
 gem "stripe", "~> 5.30"
+
+gem "ultrahook", "~> 1.0"

@@ -35,9 +35,12 @@
         <h4>OR</h4>
         <br>
       <% end %>
-
       <%= link_to "Exchange with Someone", "#", class: "basket-text btn btn-primary", id: "exchange-button" %>
       <br><br>
+
+      <%# if @book.available %>
+      <%# end %>
+
       <% if user_signed_in? %>
         <button data-stripe="payment">Purchase</button>
       <% else %>
