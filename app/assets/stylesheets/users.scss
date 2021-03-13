@@ -85,3 +85,12 @@
     }
   }
 }
+
+.user-books-container {
+  display: flex;
+  justify-content: space-evenly;
+
+  .card {
+    width: 500px;
+  }
+}
