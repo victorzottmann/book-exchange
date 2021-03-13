@@ -30,21 +30,18 @@
   <div class="basket">  
     <div class="basket-links">
       <% if !@book.user && !current_user %>
-        <%= link_to "Add to Basket", "#", class: "basket-text btn btn-primary", id: "basket-button" %>
-        <br>
-        <h4>OR</h4>
-        <br>
+        <%= link_to "Add to Cart", "#", class: "basket-text btn btn-primary", id: "basket-button" %>
+        <br><br>
       <% end %>
-      <%= link_to "Exchange with Someone", "#", class: "basket-text btn btn-primary", id: "exchange-button" %>
-      <br><br>
 
+      <%#= link_to "Exchange with Someone", "#", class: "basket-text btn btn-primary", id: "exchange-button" %>
       <%# if @book.available %>
       <%# end %>
 
       <% if user_signed_in? %>
-        <button data-stripe="payment">Purchase</button>
+        <button data-stripe="payment" class="basket-text btn btn-primary">Rent for $<%= @book.price %></button>
       <% else %>
-        <%= button_to "Buy Now!", new_user_registration_path, method: :get %>
+        <%= button_to "Rent for #{@book.price}", new_user_registration_path, method: :get, class: "basket-text btn btn-primary" %>
       <% end %>
       <br><br>
     </div>
@@ -54,7 +51,7 @@
       <%= javascript_pack_tag "leaflet/index" %>
     </div>
   </div>
-  
+
 </div>
 
 
